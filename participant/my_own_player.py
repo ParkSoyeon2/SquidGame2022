@@ -5,7 +5,7 @@ import copy
 
 class my_own_player(part.Participant):
     def __init__(self):
-        super().__init__('name of your team', 'team num')
+        super().__init__('team07', '07')
         # you can change everything in this code file!!
         # also, you can define your own variables here or in the overriding method
         # Any modifications are possible if you follows the rules of Squid Game
@@ -26,6 +26,7 @@ class my_own_player(part.Participant):
         # you can refer to an object of 'marbles', named as 'playground_marbles'
         # the return should be the number of marbles bet (> 0)!
         my_current_marbles = playground_marbles.get_num_of_my_marbles(self)
+
         return random.randint(playground_marbles.MIN_HOLDING, my_current_marbles)
 
     def declare_statement_strategy(self, playground_marbles):
@@ -60,7 +61,7 @@ class my_own_player(part.Participant):
                 else:
                     # print('chk3')
                     return random.randint(0, 1)
-        return 'error'
+        return random.randint(0, 1)
     # ================================================================================= for glass_stepping_stones game
 
 

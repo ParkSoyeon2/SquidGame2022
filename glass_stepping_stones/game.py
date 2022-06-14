@@ -2,6 +2,8 @@ import copy
 import random
 import time
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
@@ -35,7 +37,7 @@ class Map():
         self.ax2.set_xlim(- 0.1, 1.1)
         self.ax2.set_ylim(- 0.6, self.length + 0.6)
         self.fig.canvas.draw()
-        #plt.show(block=False)
+        plt.show(block=False)
         # ===== for plotting
 
     def draw_glasses(self):

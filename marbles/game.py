@@ -1,5 +1,7 @@
 import random
 import time
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 class marbles():
@@ -22,7 +24,7 @@ class marbles():
                      [self.__player_marble[players[0].name], self.__player_marble[players[1].name]],
                      color=['red', 'blue'])
         self.fig.canvas.draw()
-        #plt.show(block=False)
+        plt.show(block=False)
         # ===== for plotting
 
     def check_num_of_marbles(self):
@@ -36,7 +38,7 @@ class marbles():
                 f.close()
             return False
 
-        #print(" □ : The player failed to prepare the next step")
+        print(" □ : The player failed to prepare the next step")
 
     def gamble_marbles(self, players):
         for player in sorted(players, key=lambda x: x.turn, reverse=True):
