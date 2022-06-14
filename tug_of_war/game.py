@@ -1,5 +1,7 @@
 import time
 import random
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import OrderedDict
