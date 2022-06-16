@@ -1,9 +1,11 @@
 import time
 import random
-import matplotlib.pyplot as plt
 import numpy as np
 from collections import OrderedDict
-from matplotlib.lines import Line2D
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+import matplotlib.lines import line2D
 
 class Map():
     __STATIC_FRICTION = (0, 0)      # coefficient of static friction

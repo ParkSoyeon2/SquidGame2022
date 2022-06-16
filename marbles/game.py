@@ -1,5 +1,7 @@
 import random
 import time
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 class marbles():
