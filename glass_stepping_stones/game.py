@@ -120,6 +120,7 @@ class Map():
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
         plt.show(block=False)
+        print(self.hard_glasses)
         # ===== for plotting
 
     def add_position(self):
