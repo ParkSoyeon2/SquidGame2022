@@ -7,6 +7,7 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
+
 class Map():
     def __init__(self, num):
         self.__TEAM_NUM = 0
@@ -120,7 +121,6 @@ class Map():
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
         plt.show(block=False)
-        print(self.hard_glasses)
         # ===== for plotting
 
     def add_position(self):
@@ -190,14 +190,14 @@ class glass_stepping_stones():
         a_step = -1
         self._round += 1
         a_map.previous_records[self._round] = {}
-        a_map.draw_glasses(), time.sleep(0.05)
+        a_map.draw_glasses(), time.sleep(0.0005)
         for player in sorted(self.players, key=lambda x: x.turn, reverse=True):
-            time.sleep(0.05)
+            time.sleep(0.0005)
             player.set_previous_player(copy.deepcopy(a_map.previous_player))
             player.set_round = self._round
             print(" □ : '{}'가 출발선에서 징검다리 건너기를 시작합니다.".format(player.name))
             while True:
-                time.sleep(0.1)
+                time.sleep(0.0001)
                 a_step = player.step_toward_goal_strategy(self)
                 if a_step == None:
                     print('error')
@@ -224,7 +224,7 @@ class glass_stepping_stones():
                     break
             a_map.set_previous_player(player.name)
         print(" □ : 참가자 모두 떨어졌으므로 게임을 다시 시작합니다.\n")
-        time.sleep(0.2)
+        time.sleep(0.002)
         return True
 
 
@@ -236,13 +236,13 @@ class glass_stepping_stones():
         print(" □ : '{}'와 '{}'가 게임에 참가하였습니다.".format(*names))
         if a_map.previous_player == '':
             a_map.set_previous_player('None')
-        input(" □ : 선주를 정하겠습니다.")
+        print(" □ : 선주를 정하겠습니다.")
         temp = random.randint(0, 1)
         print(" □ : '{}'가 먼저 징검다리 건너기를 시작합니다.".format(names[temp]))
         self.players[temp].set_turn(True)
         self.players[1 - temp].set_turn(False)
         a_map.set_TEAM_NUM(self.__TEAM_NUM)
-        a_map.initialize_map(), plt.pause(2)
+        a_map.initialize_map(), plt.pause(0.01)
         self._players_steps = []
         start_time = time.time()
 
@@ -257,7 +257,7 @@ class glass_stepping_stones():
         winner, loser = winner_and_loser
         # ===== main procedure
         print(" □ : {} 번의 징검다리 건너기 게임을 통해 '{}'가 승리했습니다.".format(self._round, winner))
-
+        plt.close()
         return winner
 
     def players_record_update(self, record_dict):
@@ -265,4 +265,4 @@ class glass_stepping_stones():
             player.replace_previous_records(record_dict)
 
 if __name__ == '__main__':
-    pass
+    print(cnt)
