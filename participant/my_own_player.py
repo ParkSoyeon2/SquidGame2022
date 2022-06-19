@@ -28,8 +28,8 @@ class my_own_player(part.Participant):
 
     # ================================================================================= for glass_stepping_stones game
     def step_toward_goal_strategy(self, playground_glasses):
-        from __main__ import stage_map as map_a
-        return map_a.steps[self.position]
+        from __main__ import stage_map as answer_map
+        return answer_map.steps[self.position]
 
         #if self.position == 0:
         #    self.temp_list = copy.deepcopy(playground_glasses._players_steps)  # 상대방것도 복사
